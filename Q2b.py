@@ -10,8 +10,9 @@ num_samples = 10000 #num of samples
 def generate_samples(n,sigma,mu):
     # generate a random array of n
     uniform = np.random.uniform(0.0,1.0,(1,n))
+    uniform1= np.random.uniform(0.0,1.0,(1,n))
     R = np.sqrt(-2*np.log(1-uniform))
-    theta = 2*np.pi*uniform
+    theta = 2*np.pi*uniform1
     normal = R*np.cos(theta) 
     gaussian = np.sqrt(sigma)*normal + mu
     #print(gaussian)
@@ -34,6 +35,6 @@ for i in range (1,num_samples):
 mean_array = np.asarray(mean_list)
 var_array = np.asarray(var_list)
 num_array = np.asarray(num_list)
-# plt.plot(num_array,mean_array,color = "blue")
+plt.plot(num_array,mean_array,color = "blue")
 plt.plot(num_array,var_array, color = "red")
 plt.show()
