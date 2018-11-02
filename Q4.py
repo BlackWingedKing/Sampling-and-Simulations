@@ -1,5 +1,5 @@
 # modules required
-import needed modules
+# import needed modules
 import numpy as np
 import matplotlib
 from matplotlib import pyplot as plt
@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 # global variabless
 lam = 0.6
 mu = 0.8
-num_steps = 1000
+num_steps = 100000
 
 # initialise the packets
 num_packets = 0
@@ -40,15 +40,28 @@ for i in range (0,num_steps):
     q_list.append(num_packets)
 
 went = len(out_list)
-print(went)
+
 # convert the qt and w to array
 q_array = np.asarray(q_list)
 in_array = np.asarray(in_list)
 out_array = np.asarray(out_list)
 num_array = np.arange(went)
+num1_array = np.arange(len(q_list))
 
 wait = out_array - in_array[0:went]
 
+# time average these!!
+q_avg = []
+wait_avg = []
+
+for i in range(1,q_array.shape[0]+1):
+   q_avg.append(np.mean(q_array[0:i]))
+
+for i in range(1,wait.shape[0]+1):
+    wait_avg.append(np.mean(wait[0:i]))
+
+q_avg = np.asarray(q_avg)
 # plotting the everything
-# plt.plot(num_array,q_array,color = "blue")
-plt.plot(num_array,wait, color = "red")
+plt.plot(num1_array,q_avg,color = "blue",label = 'q(t) average')
+# plt.plot(num_array,wait_avg, color = "red", label = 'wn average')
+plt.show()
