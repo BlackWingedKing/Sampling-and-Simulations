@@ -4,8 +4,8 @@ import matplotlib
 from matplotlib import pyplot as plt
 # parameters 
 m = 10000
-k = 5 
-mu = 0.8
+k = 10
+mu = 0.7
 mu1 = 1-mu
 
 # compute the joint pmf 
@@ -46,17 +46,18 @@ bernoulli = np.where(uniform > mu1, 1, 0)
 mean = np.mean(bernoulli)
 print(mean)
 # to compute pmf
-pmf = (joint_pmf(bernoulli)).reshape(32)
+pmf = (joint_pmf(bernoulli)).reshape(2**k)
 print(pmf)
 print(np.mean(pmf)*(2**k))
-indp = (indp_pmf(bernoulli)).reshape(32)
+indp = (indp_pmf(bernoulli)).reshape(2**k)
 print(indp)
 print(np.mean(indp)*(2**k))
-num_array = np.arange(2**k).reshape(32)
+num_array = np.arange(2**k).reshape(2**k)
 
 # plotting the pmf's
-plt.plot(num_array,pmf,color = "blue")
-plt.plot(num_array,indp, color = "red")
+plt.plot(num_array,pmf,color = "blue",label = 'joint pmf simulated')
+plt.plot(num_array,indp, color = "red",label = 'joint pmf independence')
+plt.legend()
 plt.show()
 
 # by having a look at the plots independece property is verified
