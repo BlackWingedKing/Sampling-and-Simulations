@@ -1,6 +1,6 @@
 # Sampling-and-Simulations
 
-simulation exercise of the course EE-325 probability and random processes
+Simulation exercise of the course EE-325 probability and random processes
 
 We have 
 
@@ -8,6 +8,6 @@ We have
 
 2. Generated the Normal distn using box-mueller method
 
-3. Implemented a discrete-time Kalman Filter (It works :))
+3. Implemented a discrete-time Kalman Filter (Yes it works :) )
 
 4. Simulated a queue-system and observed Little's law
