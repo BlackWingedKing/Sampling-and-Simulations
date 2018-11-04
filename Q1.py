@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib 
 from matplotlib import pyplot as plt
 # parameters 
-m = 10000
-k = 5 
+m = 100000
+k = 10
 mu = 0.8
 mu1 = 1-mu
 
@@ -50,15 +50,15 @@ print(mean)
 pmf,no1s = (joint_pmf(bernoulli))
 print(pmf)
 print(np.mean(pmf)*(2**k))
-indp = (indp_pmf(bernoulli)).reshape(32)
+indp = (indp_pmf(bernoulli)).reshape(2**k)
 print(indp)
 print(np.mean(indp)*(2**k))
-num_array = np.arange(2**k).reshape(32)
+num_array = np.arange(2**k).reshape(2**k)
 
 # plotting the pmf's
-plt.hist(pmf,32,density=1,label="joint_pmf")
-plt.plot(num_array,indp, color = "red",label="indp_pmf")
-#plt.hist(no1s,5,density=1,color="yellow",label="no of 1's")
+# plt.hist(pmf,32,density=1,label="joint_pmf")
+# plt.plot(num_array,indp, color = "red",label="indp_pmf")
+plt.hist(no1s,5,density=1,color="yellow",label="no of 1's")
 plt.legend()
 plt.show()
 # by having a look at the plots independece property is verified

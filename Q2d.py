@@ -3,9 +3,9 @@ import numpy as np
 import matplotlib
 from matplotlib import pyplot as plt
 
-lam1 = 1
-lam2 = 1
-lam12 = 0.01
+lam1 = 0.1
+lam2 = 0.2
+lam12 = 0.5
 num_samples = 10000
 
 # here n,l are parameters no of samples and lambda

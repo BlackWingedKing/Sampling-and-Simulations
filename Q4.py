@@ -5,7 +5,7 @@ import matplotlib
 from matplotlib import pyplot as plt
 
 # global variabless
-lam = 0.6
+lam = 0.25
 mu = 0.8
 num_steps = 100000
 
